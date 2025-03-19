@@ -37,7 +37,7 @@ def calculate_price(message):
     try:
         price_yuan = float(message.text)
         price_rub = price_yuan * 13.75 + 3850
-        bot.send_message(message.chat.id, f"Cтоимость заказа: {price_rub}₽ + 1000 ₽/кг\nНекоторые пары под заказ, может быть скидка, поэтому за уточнением 100% цены в ЛС @GlRu_71", reply_markup=keyboard)
+        bot.send_message(message.chat.id, f"Cтоимость заказа: {price_rub}₽ + 1000 ₽/кг\nНа некоторые пары под заказ, может быть скидка, поэтому за уточнением 100% цены в ЛС @GlRu_71", reply_markup=keyboard)
     except ValueError:
         exit_keyboard = ReplyKeyboardMarkup(resize_keyboard=True)
         exit_keyboard.add(KeyboardButton("Отмена"))
