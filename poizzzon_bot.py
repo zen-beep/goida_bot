@@ -21,7 +21,7 @@ def track(message):
 
 @bot.message_handler(func=lambda message: message.text == "Актуальный курс")
 def kurs(message):
-    bot.send_message(message.chat.id, "1¥ = 13,75₽", reply_markup=keyboard)
+    bot.send_message(message.chat.id, "1¥ = 12₽", reply_markup=keyboard)
 
 @bot.message_handler(func=lambda message: message.text == "Рассчитать стоимость заказа")
 def request_price(message):
@@ -36,7 +36,7 @@ def calculate_price(message):
         return
     try:
         price_yuan = float(message.text)
-        price_rub = price_yuan * 13.75 + 3850
+        price_rub = price_yuan * 12 + 4200
         bot.send_message(message.chat.id, f"Cтоимость заказа: {price_rub}₽ + 1000 ₽/кг\nНа некоторые пары под заказ, может быть скидка, поэтому за уточнением 100% цены в ЛС @GlRu_71", reply_markup=keyboard)
     except ValueError:
         exit_keyboard = ReplyKeyboardMarkup(resize_keyboard=True)
